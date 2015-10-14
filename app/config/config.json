@@ -1,0 +1,7 @@
+{
+  "api": {
+    "username": "root@openhim.org",
+    "password": "@pelon123!",
+    "apiURL": "https://localhost:8080"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "urn": "urn:uuid:75eca390-7116-11e5-9481-e12320d25267",
+  "version": "0.4.0",
+  "name": "Facility Map Mediator",
+  "description": "A mediator for the facility map",
+  "defaultChannelConfig": [
+    {
+      "name": "Facility Map Mediator",
+      "urlPattern": "/facility/.*",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "Facility Map Mediator Route",
+          "host": "localhost",
+          "path": "",
+          "port": "4000",
+          "primary": true,
+          "type": "http"
+        }
+      ],
+      "allow": ["DemoRole"],
+      "type": "http"
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "Facility Map Mediator Route",
+      "host": "localhost",
+      "path": "",
+      "port": "4000",
+      "primary": true,
+      "type": "http"
+    }
+  ]
+}
