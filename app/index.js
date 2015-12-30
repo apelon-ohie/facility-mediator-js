@@ -17,8 +17,8 @@ register.registerMediator( apiConfig, mediatorConfig)
 
 app.get('/dts-facilities/', function (req, res) {
 
-  needleDts.get('http://40.143.220.156:8081/dtsserverws/fhir/ValueSet/valueset-c80-facilitycodes/$expand',
-   {username: 'dtsadminuser', password: 'dtsadmin'},
+  needleDts.get('http://FHIR-SERVER-URL/dtsserverws/fhir/ValueSet/FHIR-VALUESET-NAME/codes/$expand',
+   {username: 'DTS-USER', password: 'DTS-PASSWORD'},
    function (err, resp){
     if (err){
       console.log(err)
@@ -38,8 +38,8 @@ app.get('/dts-facilities/', function (req, res) {
 app.get('/rm-facilities/', function (req, res) {
   
   needleRm.get(
-   'http://resourcemap.instedd.org/api/collections/1660.json', 
-   {username: 'vkaloidis@apelon.com', password: 'apelon123'}, 
+   'http://resourcemap.instedd.org/api/collections/123-collection-id.json', 
+   {username: 'RESOURCEMAP-USERNAME', password: 'RESOURCEMAP-PASSWORD'}, 
    function(err, resp) {
    
     if (err){
@@ -93,8 +93,8 @@ app.get('/facilities/', function (req, res) {
 	          + "</ul></li>";
 	
         //Asynchronus Javascript Function does not get executed right-away... It takes some time
-        needleVerify.get('http://40.143.220.156:8081/dtsserverws/fhir/ValueSet/valueset-c80-facilitycodes/$validate?system=http://snomed.info/sct&code=' + sct, 
-            {username: 'dtsadminuser', password:'dtsadmin'}, 
+        needleVerify.get('http://FHIR-SERVER-URL:8081/dtsserverws/fhir/ValueSet/FHIR-VALUESET-NAME/$validate?system=http://snomed.info/sct&code=' + sct, 
+            {username: 'FHIR-USERNAME', password:'FHIR-PASSWORD'}, 
             function(err, resp) {
         	    if(err) {
         	      console.log("Error: " + err);
